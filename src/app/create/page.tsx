@@ -15,7 +15,7 @@ const CreatePage = () => {
     createPost(data);
   };
 
-  const { mutate: createPost, } = useMutation({
+  const { mutate: createPost } = useMutation({
     mutationFn: (newPost: FormInputPost) => {
       return axios.post("/api/posts/create", newPost);
     },
