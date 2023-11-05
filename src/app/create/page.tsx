@@ -15,7 +15,7 @@ const CreatePage = () => {
     createPost(data);
   };
 
-  const { mutate: createPost, isLoading: isLoadingSubmit } = useMutation({
+  const { mutate: createPost, } = useMutation({
     mutationFn: (newPost: FormInputPost) => {
       return axios.post("/api/posts/create", newPost);
     },
@@ -33,7 +33,6 @@ const CreatePage = () => {
       <BackButton />
       <h1 className="text-2xl my-4 font-bold text-center">Add New Post</h1>
       <FormPost
-        isLoadingSubmit={isLoadingSubmit}
         submit={handleCreatePost}
         isEditing={false}
       />
